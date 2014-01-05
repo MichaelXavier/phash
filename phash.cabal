@@ -15,6 +15,7 @@ library
   exposed-modules:  Data.PHash
   exposed-modules:  Data.PHash.Image
   exposed-modules:  Data.PHash.Types
+  exposed-modules:  Data.PHash.Video
   build-depends:    base >= 4.6 && < 4.7
   build-depends:    process
   hs-source-dirs:   src

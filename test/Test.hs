@@ -11,7 +11,9 @@ import Data.PHash
 main = defaultMain tests
 
 tests :: TestTree
-tests = testGroup "tests" [imageTests, hammingTests]
+tests = testGroup "tests" [ imageTests
+                          , videoTests
+                          , hammingTests ]
 
 imageTests :: TestTree
 imageTests = testGroup "imageHash" [
@@ -21,6 +23,16 @@ imageTests = testGroup "imageHash" [
   testCase "file exists" $ do
     result <- imageHash "test/fixtures/grump.jpg"
     result @?= Just (PHash 17549625427362946731)
+  ]
+
+videoTests :: TestTree
+videoTests = testGroup "videoHash" [
+  -- testCase "file missing" $ do
+  --   result <- videoHash "bogus"
+  --   result @?= [], -- :(
+  testCase "file exists" $ do
+    result <- videoHash "test/fixtures/jug-120.mp4"
+    result @?= [PHash 123]
   ]
 
 hammingTests :: TestTree
