@@ -1,4 +1,5 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 module Data.PHash ( imageHash
                   , hammingDistance
                   , PHash(..) ) where
@@ -8,7 +9,7 @@ import Foreign
 import Foreign.C.String
 import Foreign.C.Types
 
-newtype PHash = PHash Word64 deriving (Show, Eq)
+newtype PHash = PHash Word64 deriving (Show, Eq, Num)
 
 imageHash :: FilePath -> IO (Maybe PHash)
 imageHash path = withCString path $ \cs ->
