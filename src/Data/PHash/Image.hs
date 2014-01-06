@@ -8,6 +8,9 @@ import Foreign.C.Types
 
 import Data.PHash.Types
 
+-- |Obtain the hash of an image. Returns Nothing on failure. pHash's API does
+-- not provide any error information when this fails, but CImg may dump
+-- something to stderr.
 imageHash :: FilePath -> IO (Maybe PHash)
 imageHash path = withCString path $ \cs ->
   with startingPhash $ \pHPtr -> do

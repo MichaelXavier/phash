@@ -11,11 +11,17 @@ import Foreign.C.Types
 import Data.PHash.Image
 import Data.PHash.Types
 
+-- |Calculate the distance between two hashes. This can be used to detect how
+-- similar two images are.
 hammingDistance :: PHash -> PHash -> Int
 hammingDistance x y = unwrap $ c_ph_hamming_distance (toCPHash x) (toCPHash y)
   where unwrap (CInt i) = fromIntegral i
 
-imagesSimilar :: FilePath -> FilePath -> Int -> IO (Maybe Bool)
+-- |Determine if two images are similar by a user-defined threshold
+imagesSimilar :: FilePath
+              -> FilePath
+              -> Int -- ^ Threshold for similarity. If the hamming distance exceeds this number, it will return False. 15 seems to be a reasonable default.
+              -> IO (Maybe Bool)
 imagesSimilar p1 p2 threshold = do
   h1 <- imageHash p1
   h2 <- imageHash p2
