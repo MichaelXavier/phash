@@ -48,8 +48,8 @@ hammingTests :: TestTree
 hammingTests = testGroup "hammingTests" [
   testProperty "hammingDistance a a = 0" $
     \ph -> hammingDistance ph ph == 0,
-  testProperty "hammingDistance a a+1 /= 0" $
-    \ph -> hammingDistance ph (ph + 1) /= 0
+  testProperty "hammingDistance a b where a /= b /= 0" $
+    \ph ph' -> ph /= ph' ==> hammingDistance ph ph' /= 0
   ]
 
 instance Monad m => Serial m PHash where
