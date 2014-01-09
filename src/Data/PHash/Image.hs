@@ -8,9 +8,21 @@ import Foreign.C.Types
 
 import Data.PHash.Types
 
--- |Obtain the hash of an image. Returns Nothing on failure. pHash's API does
--- not provide any error information when this fails, but CImg may dump
--- something to stderr.
+-- $setup
+-- >>> let imgPath = "test/fixtures/grump.jpg"
+-- >>> let bogusPath = "bogus"
+
+{-|
+Obtain the hash of an image. Returns Nothing on failure. pHash's API does
+not provide any error information when this fails, but CImg may dump
+something to stderr.
+
+Examples:
+
+>>> import Data.PHash
+>>> imageHash imgPath
+Just (PHash 17549625427362946731)
+-}
 imageHash :: FilePath -> IO (Maybe PHash)
 imageHash path = withCString path $ \cs ->
   with startingPhash $ \pHPtr -> do

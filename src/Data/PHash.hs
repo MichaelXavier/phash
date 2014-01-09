@@ -11,8 +11,17 @@ import Foreign.C.Types
 import Data.PHash.Image
 import Data.PHash.Types
 
--- |Calculate the distance between two hashes. This can be used to detect how
--- similar two images are.
+{-|
+Calculate the distance between two hashes. This can be used to detect how
+similar two images are.
+
+>>> import Data.PHash
+>>> hammingDistance (PHash 15243782418149777067) (PHash 17549625427362946731)
+2
+
+>>> hammingDistance (PHash 15243782418149777067) (PHash 15243782418149777067)
+0
+-}
 hammingDistance :: PHash -> PHash -> Int
 hammingDistance x y = unwrap $ c_ph_hamming_distance (toCPHash x) (toCPHash y)
   where unwrap (CInt i) = fromIntegral i
@@ -29,3 +38,4 @@ imagesSimilar p1 p2 threshold = do
   where checkDistance h1 h2 = (<=threshold) $ hammingDistance h1 h2
 
 foreign import ccall "pHash.h ph_hamming_distance" c_ph_hamming_distance :: CULong -> CULong -> CInt
+
