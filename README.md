@@ -27,3 +27,8 @@ main = do
 # Credit
 All credit goes to the original pHash authors. For more information about pHash
 visit http://phash.org
+
+# Contributors
+
+* [Michael Xavier](http://github.com/MichaelXavier)
+* [Hans Raaf](https://github.com/oderwat)
