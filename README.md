@@ -1,5 +1,7 @@
 # phash: Haskell bindings to pHash, the open source perceptual hash library
 
+[![Build Status](https://travis-ci.org/MichaelXavier/phash.svg?branch=master)](https://travis-ci.org/MichaelXavier/phash)
+
 PHash is a library for generating perceptual hashes of media files. These
 bindings currently only support images. You can compare these hashes to detect
 visually similar images.
