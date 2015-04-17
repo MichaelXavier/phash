@@ -6,3 +6,4 @@ before_install:
   - sudo apt-get update
 install:
   - sudo apt-get install libphash0-dev
+script: "cabal install --only-dependencies --enable-tests && cabal build && cabal test"
