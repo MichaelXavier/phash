@@ -1,7 +1,7 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 module Data.PHash.Image ( imageHash ) where
 
-import           Control.Applicative ((<$>))
+import           Control.Applicative
 import           Foreign
 import           Foreign.C.String
 import           Foreign.C.Types

@@ -4,7 +4,7 @@ module Data.PHash ( hammingDistance
                   , module Data.PHash.Image
                   , module Data.PHash.Types ) where
 
-import           Control.Applicative ((<$>), (<*>))
+import           Control.Applicative
 import           Foreign.C.Types
 
 import           Prelude
