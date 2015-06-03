@@ -1,12 +1,14 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 module Data.PHash.Image ( imageHash ) where
 
-import Control.Applicative ((<$>))
-import Foreign
-import Foreign.C.String
-import Foreign.C.Types
+import           Control.Applicative ((<$>))
+import           Foreign
+import           Foreign.C.String
+import           Foreign.C.Types
 
-import Data.PHash.Types
+import           Prelude
+
+import           Data.PHash.Types
 
 -- $setup
 -- >>> let imgPath = "test/fixtures/grump.jpg"

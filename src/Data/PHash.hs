@@ -4,12 +4,13 @@ module Data.PHash ( hammingDistance
                   , module Data.PHash.Image
                   , module Data.PHash.Types ) where
 
-import Control.Applicative ( (<$>)
-                           , (<*>) )
-import Foreign.C.Types
+import           Control.Applicative ((<$>), (<*>))
+import           Foreign.C.Types
 
-import Data.PHash.Image
-import Data.PHash.Types
+import           Prelude
+
+import           Data.PHash.Image
+import           Data.PHash.Types
 
 {-|
 Calculate the distance between two hashes. This can be used to detect how

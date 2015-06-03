@@ -7,6 +7,8 @@ import           Test.Tasty
 import           Test.Tasty.HUnit
 import           Test.Tasty.SmallCheck
 
+import           Prelude
+
 import           Data.PHash
 
 main :: IO ()
