@@ -1,13 +1,15 @@
-{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE FlexibleInstances     #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
-import Control.Applicative
-import Test.Tasty
-import Test.Tasty.SmallCheck
-import Test.Tasty.HUnit
-import Test.SmallCheck.Series
+{-# OPTIONS_GHC -fno-warn-orphans #-}
+import           Control.Applicative
+import           Test.SmallCheck.Series
+import           Test.Tasty
+import           Test.Tasty.HUnit
+import           Test.Tasty.SmallCheck
 
-import Data.PHash
+import           Data.PHash
 
+main :: IO ()
 main = defaultMain tests
 
 tests :: TestTree
