@@ -57,7 +57,7 @@ test-suite docs
   hs-source-dirs:   src, test
   extra-libraries:  pHash
   ghc-options:      -threaded
-  build-depends:    base >= 4.6 && < 4.8
+  build-depends:    base
   build-depends:    doctest >= 0.9.10 && < 1.0
   build-depends:    phash
 
