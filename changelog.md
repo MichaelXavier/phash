@@ -1,4 +1,6 @@
 # Changelog
+## 0.0.6
+- Widen dependencies
 ## 0.0.5 - 2015-07-03
 -  Add missing test suite files
 ## 0.0.4 - 2015-06-04

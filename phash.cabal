@@ -1,5 +1,5 @@
 name:               phash
-version:            0.0.5
+version:            0.0.6
 synopsis:           Haskell bindings to pHash, the open source perceptual hash library
 description:        See http://www.phash.org/ for more info. Note that you
                     must have libphash installed on your system to use this
